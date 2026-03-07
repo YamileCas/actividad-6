@@ -1,14 +1,21 @@
 <?php
 
-namespace App\Models\Universe;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Universe extends Model
 {
-    protected $fillable =[
+
+    protected $fillable = [
         'universe',
-        'company', 
+        'company',
         'age'
-        ];
+    ];
+
+    public function superheroes()
+    {
+        return $this->hasMany(Superhero::class);
+    }
+
 }
